@@ -42,7 +42,7 @@ important to note that *these are distinct buses, used for different purposes,
 and are not simply the same bus being run in two different ways*.
 
 A *system bus* relates to services provided by the OS and system daemons, and
-for communication between different user sessions. The system bus is used for
+communication between different user sessions. The system bus is used for
 communication about system-wide events: storage being added, network
 connectivity changes, printer status, and so on. There is usually only one
 system bus.
@@ -300,7 +300,7 @@ Interfaces:
 
 - `org.freedesktop.FileManager1`
 
-### Media Player Remote Interfacing Specification
+### Media Player Remote Interfacing Specification (MPRIS)
 
 [specification](https://specifications.freedesktop.org/mpris-spec/latest/)
 
