@@ -276,6 +276,22 @@ Interfaces:
 - `org.bluez.Thermometer1`
 - `org.bluez.ThermometerWatcher1`
 
+### D-Bus
+
+[specification](https://dbus.freedesktop.org/doc/dbus-specification.html)
+
+Bus name:
+
+- `org.freedesktop.DBus`
+
+Interfaces:
+
+- `org.freedesktop.DBus`
+- `org.freedesktop.DBus.Peer`
+- `org.freedesktop.DBus.Introspectable`
+- `org.freedesktop.DBus.Properties`
+- `org.freedesktop.DBus.ObjectManager`
+
 ### Desktop Notifications Specification
 
 [specification](https://specifications.freedesktop.org/notification-spec/notification-spec-latest.html)
