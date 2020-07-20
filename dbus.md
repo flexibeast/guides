@@ -300,6 +300,21 @@ Interfaces:
 
 - `org.freedesktop.FileManager1`
 
+### logind
+
+[specification](https://freedesktop.org/wiki/Software/systemd/logind/)
+
+Bus name:
+
+- `org.freedesktop.login1`
+
+Interfaces:
+
+- `org.freedesktop.login1.Manager`
+- `org.freedesktop.login1.Seat`
+- `org.freedesktop.login1.Session`
+- `org.freedesktop.login1.User`
+
 ### Media Player Remote Interfacing Specification (MPRIS)
 
 [specification](https://specifications.freedesktop.org/mpris-spec/latest/)
