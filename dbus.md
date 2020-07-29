@@ -7,8 +7,8 @@ Handbook](https://docs.voidlinux.org/about-handbook/index.html). For tips on
 using D-Bus in the context of Void, refer to [this guide](./dbus-on-void.md).
 
 This document is purely descriptive; nothing in it should be taken as implying
-either support or criticism of D-Bus and/or its design. Technical corrections,
-and additions to [the "Reference" section](#reference), are welcome.
+either support or criticism of D-Bus and/or its design. Technical corrections
+are welcome.
 
 ## Introduction
 
