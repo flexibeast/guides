@@ -1,5 +1,7 @@
 # D-Bus reference
 
+For a brief overview of D-Bus, refer to [this guide](./dbus.md).
+
 *Well-known* bus names are defined in various specifications.
 
 ## Accessibility / AT-SPI

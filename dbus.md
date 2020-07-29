@@ -15,7 +15,8 @@ and additions to [the "Reference" section](#reference), are welcome.
 D-Bus is a *protocol*, and should not be confused with specific
 [implementations](#implementations) of the protocol. In particular, the [D-Bus
 specification](https://dbus.freedesktop.org/doc/dbus-specification.html)
-provides a bus for [Inter-Process
+provides [buses](https://en.wikipedia.org/wiki/Software_bus) to facilitate
+[Inter-Process
 Communication](https://en.wikipedia.org/wiki/Inter-process_communication) (IPC)
 and [Remote Procedure
 Calls](https://en.wikipedia.org/wiki/Remote_procedure_call) (RPC).
