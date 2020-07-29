@@ -8,7 +8,7 @@ Handbook](https://docs.voidlinux.org/about-handbook/index.html#example-commands)
 Clone the void-packages repository:
 
 ```
-$ git clone --depth 1 https://github.com/void-linux/void-packages
+$ git clone https://github.com/void-linux/void-packages
 ```
 
 Change to the new `void-packages` directory and bootstrap:
@@ -27,21 +27,21 @@ The first time you build a suckless package, you will need to:
 
 1. Download and extract the package:
 
-```
-$ ./xbps-src extract <package>
-```
+   ```
+   $ ./xbps-src extract <package>
+   ```
 
 2. Create a `files` directory in the same directory as the package template:
 
-```
-$ mkdir srcpkgs/<package>/files
-```
+   ```
+   $ mkdir srcpkgs/<package>/files
+   ```
 
 3. Create your local `config.h` in that directory:
 
-```
-$ cp masterdir/builddir/<package>-<version>/config.def.h srcpkgs/<package>/files/config.h
-```
+   ```
+   $ cp masterdir/builddir/<package>-<version>/config.def.h srcpkgs/<package>/files/config.h
+   ```
 
 Edit `srcpkgs/<package>/files/config.h` as required.
 
@@ -76,7 +76,7 @@ Then force-reinstall using the `-f` option:
 
 ## Checking for package updates
 
-Update your local `void-packages` repository using `git pull`, then use
+Update your local `void-packages` repository using `git pull --rebase`, then use
 [xbps-checkvers(1)](https://man.voidlinux.org.xbps-checkvers.1) to check if
 there's a newer version:
 
@@ -86,4 +86,6 @@ $ xbps-checkvers -D <local_repository_path> -I -m <package>
 
 More than one package name can be supplied to the `-m` option.
 
-If there's a newer version, start again from [the "Configuring" step](#configuring).
+If there's a newer version, start again from [the "Configuring"
+step](#configuring), omitting the step of creating a `files`
+directory.
