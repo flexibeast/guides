@@ -74,6 +74,12 @@ Then force-reinstall using the `-f` option:
 # xbps-install -R hostdir/binpkgs -f <package>
 ```
 
+## Applying patches
+
+Patches for the version being built, as specified in
+`srcpkgs/<package>/template`, can be applied by adding them to a
+`srcpkgs/<package>/patches` directory.
+
 ## Checking for package updates
 
 Update your local `void-packages` repository using `git pull --rebase`, then use
