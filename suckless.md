@@ -77,7 +77,7 @@ Then force-reinstall using the `-f` option:
 ## Checking for package updates
 
 Update your local `void-packages` repository using `git pull --rebase`, then use
-[xbps-checkvers(1)](https://man.voidlinux.org.xbps-checkvers.1) to check if
+[xbps-checkvers(1)](https://man.voidlinux.org/xbps-checkvers.1) to check if
 there's a newer version:
 
 ```
