@@ -1,5 +1,16 @@
 # Managing suckless software on Void
 
+If you'd like to manage your suckless software via the XBPS package
+manager, you can build suckless packages using
+[xbps-src](https://github.com/void-linux/void-packages/blob/master/Manual.md). `xbps-src`
+is the program that builds the binary packages available in the Void
+package repositories, using the templates in [the void-packages GitHub
+repository](https://github.com/void-linux/void-packages). Note that
+the void-packages repository doesn't contain software *sources*;
+instead, it contains the template files that specify how to *fetch and
+extract* sources, and how to build XBPS packages from the extracted
+sources.
+
 This guide uses the [conventions of the Void
 Handbook](https://docs.voidlinux.org/about-handbook/index.html#example-commands).
 
