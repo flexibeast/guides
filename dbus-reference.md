@@ -125,7 +125,7 @@ Interfaces:
 - `org.freedesktop.DBus.Properties`
 - `org.freedesktop.DBus.ObjectManager`
 
-### Desktop Notifications Specification
+## Desktop Notifications Specification
 
 [specification](https://specifications.freedesktop.org/notification-spec/notification-spec-latest.html)
 
@@ -137,7 +137,7 @@ Interfaces:
 
 - `org.freedesktop.Notifications`
 
-### File Manager Interface
+## File Manager Interface
 
 [specification](https://www.freedesktop.org/wiki/Specifications/file-manager-interface/)
 
@@ -180,7 +180,7 @@ Interfaces:
 - `org.freedesktop.login1.Session`
 - `org.freedesktop.login1.User`
 
-### Media Player Remote Interfacing Specification (MPRIS)
+## Media Player Remote Interfacing Specification (MPRIS)
 
 [specification](https://specifications.freedesktop.org/mpris-spec/latest/)
 
