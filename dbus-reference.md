@@ -149,6 +149,22 @@ Interfaces:
 
 - `org.freedesktop.FileManager1`
 
+## GNOME Session
+
+[specification](https://people.gnome.org/~mccann/gnome-session/docs/gnome-session.html)
+
+Bus name:
+
+- `org.gnome.SessionManager`?
+
+Interfaces:
+
+- `org.gnome.SessionManager`
+- `org.gnome.SessionManager.Client`
+- `org.gnome.SessionManager.ClientPrivate`
+- `org.gnome.SessionManager.Inhibitor`
+- `org.gnome.SessionManager.Presence`
+
 ## logind
 
 [specification](https://freedesktop.org/wiki/Software/systemd/logind/)
