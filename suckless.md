@@ -12,7 +12,7 @@ extract* sources, and how to build XBPS packages from the extracted
 sources.
 
 This guide uses the [conventions of the Void
-Handbook](https://docs.voidlinux.org/about-handbook/index.html#example-commands).
+Handbook](https://docs.voidlinux.org/about/about-this-handbook.html).
 
 ## Prepare the environment
 

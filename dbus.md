@@ -1,10 +1,12 @@
 # D-Bus: The essentials
 
-This guide is intended to provide a short overview of D-Bus, to save people from
-having to distill the core concepts from more detailed documents elsewhere. It
-generally follows the [conventions used in the Void
-Handbook](https://docs.voidlinux.org/about-handbook/index.html). For tips on
-using D-Bus in the context of Void, refer to [this guide](./dbus-on-void.md).
+This guide is intended to provide a short overview of D-Bus, to save
+people from having to distill the core concepts from more detailed
+documents elsewhere. It generally follows the [conventions used in the
+Void
+Handbook](https://docs.voidlinux.org/about/about-this-handbook.html). For
+tips on using D-Bus in the context of Void, refer to [this
+guide](./dbus-on-void.md).
 
 This document is purely descriptive; nothing in it should be taken as implying
 either support or criticism of D-Bus and/or its design. Technical corrections
