@@ -8,12 +8,14 @@ For a brief overview of D-Bus, refer to [this guide](./dbus.md).
 
 - [Accessibility / AT-SPI](#accessibility--ati-spi)
 - [BlueZ](#bluez)
+- [colord](#colord)
 - [D-Bus](#d-bus)
 - [Desktop Notifications Specification](#desktop-notifications-specification)
 - [File Manager Interface](#file-manager-interface)
 - [GNOME Session](#gnome-session)
 - [logind](#logind)
 - [Media Player Remote Interfacing Specification (MPRIS)](#media-player-remote-interfacing-specification-mpris)
+- [PolicyKit](#policykit)
 - [PulseAudio](#pulseaudio)
 
 ## Accessibility / AT-SPI
@@ -121,6 +123,21 @@ Interfaces:
 - `org.bluez.Thermometer1`
 - `org.bluez.ThermometerWatcher1`
 
+## colord
+
+[specification](https://www.freedesktop.org/software/colord/gtk-doc/ref-dbus.html)
+
+Bus name:
+
+- `org.freedesktop.ColorManager`?
+
+Interfaces:
+
+- `org.freedesktop.ColorManager`
+- `org.freedesktop.ColorManager.Device`
+- `org.freedesktop.ColorManager.Profile`
+- `org.freedesktop.ColorManager.Sensor`
+
 ## D-Bus
 
 [specification](https://dbus.freedesktop.org/doc/dbus-specification.html)
@@ -206,6 +223,19 @@ Interfaces:
 - `org.mpris.MediaPlayer2.Player`
 - `org.mpris.MediaPlayer2.TrackList`
 - `org.mpris.MediaPlayer2.Playlists`
+
+## PolicyKit
+
+[specifications](https://www.freedesktop.org/software/polkit/docs/latest/ref-dbus-api.html)
+
+Bus names:
+
+- `org.freedesktop.PolicyKit1` on system bus
+
+Interfaces:
+
+- `org.freedesktop.PolicyKit1.Authority`
+- `org.freedesktop.PolicyKit1.AuthenticationAgent`
 
 ## PulseAudio
 
