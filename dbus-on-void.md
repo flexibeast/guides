@@ -3,6 +3,10 @@
 For a short introduction to D-Bus, read [this guide](./dbus.md). It's important
 to note the distinction between a D-Bus *system bus* and a D-Bus *session bus*:
 
+> There are two primary D-Bus buses: a *system bus*, and a *session bus*. It's
+> important to note that *these are distinct buses, used for different purposes,
+> and are not simply the same bus being run in two different ways*.
+>
 > A *system bus* relates to services provided by the OS and system daemons, and
 > communication between different user sessions. The system bus is used for
 > communication about system-wide events: storage being added, network
@@ -12,9 +16,18 @@ to note the distinction between a D-Bus *system bus* and a D-Bus *session bus*:
 > A *session bus* relates to a particular user login session, and is used by
 > processes wishing to communicate with each other within that session.
 
-On Void, the system bus is provided by the `dbus` service. Session buses are
-started by your Desktop Environment (DE), or can be started with
-`dbus-run-session`,which is
+Some software expects to be able to use a D-Bus *system* bus to communicate with
+other parts of the system; other software expects to be able to use a D-Bus
+*session* bus to communicate with certain parts of a user login session. Some
+software doesn't require either. Thus, whether or not you need to enable a
+system bus and/or a session bus is dependent on the software you use.
+
+On Void, the system bus is provided by the `dbus` service; as it is a system
+bus, and not a session bus, it does not set the `DBUS_SESSION_BUS_ADDRESS`
+variable.
+
+Session buses are started by your Desktop Environment (DE), or can be started
+with `dbus-run-session`, which is
 [preferred](https://github.com/void-linux/void-docs/pull/263/files#r426368717)
 to `dbus-start`. Both `dbus-run-session` and `dbus-start` set the
 `DBUS_SESSION_BUS_ADDRESS` environment variable. However, only `dbus-start`
@@ -23,7 +36,8 @@ writes that the value of that variable (together with the values of
 `~/.dbus/session-bus/`.
 
 The usual way to use `dbus-run-session` is to use it in `~/.xinitrc` to call a
-Window Manager (WM). For example, `.xinitrc` might contain, as its only or final
+Window Manager (WM), so that a session bus is available to software you run from
+within your WM. For example, `.xinitrc` might contain, as its only or final
 line:
 
 ```
@@ -31,9 +45,8 @@ exec dbus-run-session i3
 ```
 
 Note that the value of `DBUS_SESSION_BUS_ADDRESS` will only be available to the
-WM and processes spawned by it. Thus, anything in `~/.xinitrc` *after* the call
-to `dbus-run-session` will not have access to that value. Thus, if one instead
-had:
+WM and processes spawned by it - anything in `~/.xinitrc` *after* the call to
+`dbus-run-session` will not have access to that value. Thus, if one instead had:
 
 ```
 dbus-run-session i3
@@ -42,7 +55,7 @@ some-program
 
 then, from the point of view of `some-program`, `DBUS_SESSION_BUS_ADDRESS` would
 not be set. If such a program needs access to the value of
-`DBUS_SESSION_BUS_ADDRESS`, it should be instead called via a WM's setup
+`DBUS_SESSION_BUS_ADDRESS`, it should be instead called via the WM's setup
 process: for example, in `~/.config/i3/config` or `~/.config/bspwm/bspwmrc`.
 
 ## PulseAudio
