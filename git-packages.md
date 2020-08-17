@@ -10,7 +10,7 @@ anti-pattern. However, sometimes it is impossible to avoid this type of package,
 whether because the development branch of a piece of software you use has
 essential bug fixes or features, or because you want to test drive the brand new
 developments. This guide explains how to create such packages from an existing
-template, presents an alternative way of addding essential fixes through patches
+template, presents an alternative way of adding essential fixes through patches
 (which may even be accepted in the
 [void-packages](https://github.com/void-linux/void-packages) repository), and
 explains potential issues that you may face.
