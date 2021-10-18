@@ -27,7 +27,7 @@ $ git clone --depth 1 https://github.com/void-linux/void-packages/
 $ cd void-packages
 $ ./xbps-src binary-bootstrap
 $ git remote add mobinmob https://github.com/mobinmob/void-packages/
-$ git fetch mobinmob boot-66serv
+$ git fetch --depth 1 mobinmob boot-66serv
 $ git checkout -b boot-66serv mobinmob/boot-66serv
 $ ./xbps-src pkg boot-66serv
 # xi boot-66serv
