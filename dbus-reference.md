@@ -17,6 +17,7 @@ For a brief overview of D-Bus, refer to [this guide](./dbus.md).
 - [Media Player Remote Interfacing Specification (MPRIS)](#media-player-remote-interfacing-specification-mpris)
 - [PolicyKit](#policykit)
 - [PulseAudio](#pulseaudio)
+- [UPower](#upower)
 
 ## Accessibility / AT-SPI
 
@@ -263,3 +264,17 @@ Interfaces:
 - `org.PulseAudio.Ext.StreamRestore1`
 - `org.PulseAudio.Ext.StreamRestore1.RestoreEntry`
 - `org.PulseAudio.Ext.Ladspa1`
+
+## UPower
+
+[API reference](https://upower.freedesktop.org/docs/ref-dbus.html)
+
+Bus names:
+
+- `org.freedesktop.UPower` on system bus
+
+Interfaces:
+
+- `org.freedesktop.UPower`
+- `org.freedesktop.UPower.Device`
+- `org.freedesktop.UPower.KbdBacklight`
