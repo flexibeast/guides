@@ -1,0 +1,32 @@
+.Dd January 1, 2020
+.Dt MDOC-EXAMPLES 7
+.Os
+.Sh NAME
+.Nm mdoc-examples
+.Nd print example mdoc source to stdout
+.Sh SYNOPSIS
+.Nm
+.Op Fl v | Fl h
+.Sh DESCRIPTION
+.Nm
+prints some example
+.Xr mdoc 7
+source to stdout.
+.Sh OPTIONS
+.Bl -tag -width x
+.It Fl v
+Print version information to stdout.
+.It Fl h
+Print usage information to stdout.
+.El
+.Sh EXIT STATUS
+If
+.Nm
+is able to print the examples, it exits with status code 0.
+Otherwise, it exits with status code -1.
+.Sh SEE ALSO
+.Xr mandoc 1 ,
+.Xr mdoc 7 ,
+.Xr roff 7
+.Sh AUTHORS
+.An Alexis
