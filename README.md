@@ -2,6 +2,8 @@
 
 A collection of ICT guides that people might find helpful.
 
+- General
+   - [Writing man pages with mdoc(7): a quickstart guide](./mdoc-quickstart.md)
 - D-Bus
    - [D-Bus: The essentials](./dbus.md)
    - [D-Bus interfaces reference](./dbus-reference.md)
