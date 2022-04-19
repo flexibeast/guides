@@ -4,11 +4,11 @@
 
 Even if one's software for \*n\*x-ish systems has a comprehensive manual in another format, it should also have at least a brief man page providing information about running the program: how it can be called from the command line (including any available options), which environment variables it uses and affects (if any), the files it uses (e.g. for configuration), its possible exit statuses, what standards it conforms to (if any), and related programs.
 
-On Linux, the standard language used to write man pages is [man(7)](https://man.openbsd.org/man.7). man(7) is a set of roff macros; roff is a typesetting language ultimately descended from [the RUNOFF system](https://en.wikipedia.org/wiki/RUNOFF), the first computer typesetting system, developed for [the CTSS project](https://en.wikipedia.org/wiki/Compatible_Time-Sharing_System) in 1963. Refer to [Appendix A](#appendix-a-a-brief-history-of-roff) for a brief historical timeline.
+On Linux, the standard language used to write man pages is [man(7)](https://man.openbsd.org/man.7). man(7) is a set of roff macros; roff is a typesetting language ultimately descended from [RUNOFF](https://en.wikipedia.org/wiki/RUNOFF), the first computer typesetting system, developed for [the CTSS project](https://en.wikipedia.org/wiki/Compatible_Time-Sharing_System) in 1963. Refer to [Appendix A](#appendix-a-a-brief-history-of-roff) for a brief historical timeline.
 
-Unfortunately, the man(7) macros are presentation-oriented, rather than semantics-oriented. This limits the usefulness of the man page system, as the 'markup' provided by these macros do not indicate the nature of what's being marked up. For example, the italicisation of text might indicate one of any number of things: that the text is a placeholder for an argument to a command or function, that the text is a program, that the text is in natural language different from the rest of the text, or merely that the text is being emphasised to the reader. Further, there is not necessarily ay consistency in these usages from one set of documentation to the next.
+Unfortunately, the man(7) macros are presentation-oriented, rather than semantics-oriented. This limits the usefulness of the man page system, as the 'markup' provided by these macros do not indicate the nature of what's being marked up. For example, the italicisation of text might indicate one of any number of things: that the text is a placeholder for an argument to a command or function, that the text is a program, that the text is in a natural language different from the rest of the text, or merely that the text is being emphasised to the reader. Further, there is not necessarily any consistency in these usages from one set of documentation to the next.
 
-Fortunately, the man(7) macros are not the only possibility. One can also write man pages with the [mdoc(7)](https://man.openbsd.org/mdoc.7) macros. The mdoc(7) macros *are* semantically oriented, and are commonly used for the man pages for BSD systems (e.g. OpenBSD). As a result, if one wishes to search for all man pages referencing the `PATH` environment variable, one can do:
+Fortunately, the man(7) macros are not the only possibility: one can also write man pages with the [mdoc(7)](https://man.openbsd.org/mdoc.7) macros. The mdoc(7) macros *are* semantically oriented, and are commonly used for the man pages for BSD systems (e.g. OpenBSD). As a result, if one wishes to search for all man pages referencing the `PATH` environment variable, one can do:
 
 ```
 $ apropos Ev=PATH
@@ -22,19 +22,19 @@ Just as in Web design, mdoc(7) separates content from presentation.
 
 [groff(1)](https://man.voidlinux.org/groff.1), GNU roff, is the current de facto standard roff program. The language it implements, and groff-specific extensions, are documented in [groff(7)](https://man.voidlinux.org/groff.7); the escape sequences for various glyphs are documented in [groff_char(7)](https://man.voidlinux.org/groff_char.7).
 
-However, another roff implementation is provided by [mandoc(1)](https://man.openbsd.org/mandoc.1). mandoc, rather than [man-db](http://man-db.nongnu.org/), is the default man page system for not only OpenBSD, but also for some Linux distributions, such as Void, Alpine, and (optionally) Gentoo.
+However, another roff implementation is provided by [mandoc(1)](https://man.openbsd.org/mandoc.1). [mandoc](https://mandoc.bsd.lv/), rather than [man-db](http://man-db.nongnu.org/), is the default man page system for not only OpenBSD, but also for some Linux distributions, such as Void, Alpine, and (optionally) Gentoo.
 
 Both groff(1) and mandoc(1) support the mdoc(7) macro package in addition to man(7).
 
 ### Why not use Markdown?
 
-Markdown is a *bad* choice for producing quality man pages. It's presentation markup, not semantic markup, without even the possibility of semantics being systematically added by the creator (unlike HTML, where one can add semantics via the `class` attribute). It has many flavours, each slightly different from the others: for example, the pandoc(1) man page lists "commonmark", "commonmark_x", "markdown", "markdown_mdd", "markdown_phpextra" and "markdown_strict" as distinct formats. And although the CommonMark spec exists, but to a certain extent suffers from the "[now you have 15 competing standards](https://xkcd.com/927/)" problem. It's certainly relatively easy to *write*, but it's much less easy to *parse*, hindering format conversion.
+Markdown is a *bad* choice for producing quality man pages. It's presentation markup, not semantic markup, without even the possibility of the document author systematically adding semantics (unlike, for example, HTML, where one can add semantics via the `class` attribute). It has many flavours, each slightly different from the others: for example, the pandoc(1) man page lists "commonmark", "commonmark_x", "markdown", "markdown_mdd", "markdown_phpextra" and "markdown_strict" as distinct formats. And although the CommonMark spec exists, but to a certain extent suffers from the "[now you have 15 competing standards](https://xkcd.com/927/)" problem. It's certainly relatively easy to *write*, but it's much less easy to *parse*, hindering format conversion.
 
 Even if you refuse to write mdoc(7) to write man pages, *please* try to use a source language that substantially facilitates semantic markup (e.g. HTML).
 
 ## roff: the basics
 
-roff is a line-oriented language. Each line is either a control line, or a text line. Control lines have commands, such as a request or macro; text lines are plain text, with no requests/macros, but including some escape codes (cf. below). A control line usually has an initial `.`, followed by a request / macro. Lines that need to begin with a literal `.` are preceded a zero-width space, `\&`: `\&.`. Escape codes, which begin with a leading backslash (`\`), can be used to produce particular glyphs, such as an em dash (`\(em` -> `—`), a check mark (`\(OK` -> `✓`) or an accented character (`\(:y` -> `ÿ`); further details can be found in mandoc_char(7) or groff_char(7). Note that a literal backslash is produced by `\e`, not `\\`.
+roff is a line-oriented language. Each line is either a control line, or a text line. Control lines have commands, such as a request or macro; text lines are plain text, with no requests/macros, but possibly some escape codes (cf. below). A control line usually has an initial `.`, followed by a request / macro. Lines that need to begin with a literal `.` are preceded a zero-width space, `\&`: `\&.`. Escape codes, which begin with a leading backslash (`\`), can be used to produce particular glyphs, such as an em dash (`\(em` -> `—`), a check mark (`\(OK` -> `✓`) or an accented character (`\(:y` -> `ÿ`); further details can be found in mandoc_char(7) or groff_char(7). Note that a literal backslash is produced by `\e`, not `\\`.
 
 When writing man pages in mdoc(7), the mdoc(7) macros should be used as much as possible; using roff requests should only be a last resort.
 
@@ -99,7 +99,7 @@ Next, the SYNOPSIS section:
 
 The use of `Nm` without arguments will produce the name of the software as previously defined, i.e. "mdoc-example".
 
-The `Op` macro is for producing text about an Optional argument, and the `Fl` macro indicates a Flag. These two lines demonstrate *parsed* and *callable* macros: the `Op` macro is parsed for further macros, which themselves must be callable. `Fl` is a callable macro, which takes as its argument the literal for the flag.
+The `Op` macro is for producing text about an Optional argument, and the `Fl` macro indicates a Flag. This line demonstrates *parsed* and *callable* macros: the `Op` macro is parsed for further macros, which themselves must be callable. `Fl` is a callable macro, which takes as its argument the literal for the flag.
 
 The preceding will produce something like:
 
@@ -118,7 +118,7 @@ prints some example
 source to stdout.
 ```
 
-The `Xr` macro is for Cross References to other man pages; it takes two arguments, the name of the man page, and its section.
+The `Xr` macro is for Cross References to other man pages. It takes two arguments: the name of the man page, and its section.
 
 Note that any formatting command is on a distinct line of its own, rather than being inline.
 
@@ -168,11 +168,12 @@ Otherwise, it exits with status code -1.
 ```
 Note that a new sentence starts on a new line. To start a new paragraph, use the `Pp` macro.
 
-The preceding will produce:
+The preceding will produce something like:
 
 ```
 EXIT STATUS
-    If mdoc-examples is able to print the examples, it exits with status code 0.  Otherwise, it exits with status code -1.
+    If mdoc-examples is able to print the examples, it exits with status code
+    0.  Otherwise, it exits with status code -1.
 ```
 
 Next, the SEE ALSO section:
@@ -270,4 +271,4 @@ Some real-world examples of mdoc(7) sources can be found in the following reposi
 | 1990     | groff   | C++        | Unix    | James Clark              |
 +----------+---------+------------+---------+--------------------------+
 ``` 
-Corrections to this table welcome and encouraged. Further historical details can be found in [here](https://man.voidlinux.org/roff.7).
+Corrections to this table welcome and encouraged. Further historical details can be found [here](https://man.voidlinux.org/roff.7).
