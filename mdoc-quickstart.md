@@ -283,6 +283,7 @@ Some real-world examples of mdoc(7) sources can be found in the following reposi
 
 OSes with a check mark ('✓') can display mdoc(7) man pages "out of the box", without any special configuration required on the part of the user.
 
+```
 +--------------+---+ --------------+
 | OS           |   | man system    |
 +--------------+---+---------------+
@@ -295,6 +296,7 @@ OSes with a check mark ('✓') can display mdoc(7) man pages "out of the box", w
 | Ubuntu       | ✓ | man-db        |
 | Void         | ✓ | mandoc        |
 +--------------+---+---------------+
+```
 
 Corrections and/or additions to this table welcome and encouraged.
 
