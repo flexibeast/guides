@@ -80,9 +80,9 @@ Next, the NAME section:
 
 The `Sh` macro is for a Section Header. In this instance, it's passed the argument `NAME`, which should be capitalised.
 
-The `Nm` macro is for both defining and producing the name of the software. In this instance, it's passed the argument `mdoc-example`, which defines what will be produced by `Nm` on its own - cf. below.
+The `Nm` macro is for both defining and producing the name of the software. In this instance, it's passed the argument `mdoc-examples`, which defines what will be produced by `Nm` on its own - cf. below.
 
-the `Nd` macro is for producing a short description of the software, as provided by its argument. The argument should not have any punctuation at the end.
+The `Nd` macro is for producing a short description of the software, as provided by its argument. The argument should not have any punctuation at the end.
 
 The preceding will produce something like:
 
@@ -99,7 +99,7 @@ Next, the SYNOPSIS section:
 .Op Fl v | Fl h
 ```
 
-The use of `Nm` without arguments will produce the name of the software as previously defined, i.e. "mdoc-example".
+The use of `Nm` without arguments will produce the name of the software as previously defined, i.e. "mdoc-examples".
 
 The `Op` macro is for producing text about an Optional argument, and the `Fl` macro indicates a Flag. This line demonstrates *parsed* and *callable* macros: the `Op` macro is parsed for further macros, which themselves must be callable. `Fl` is a callable macro, which takes as its argument the literal for the flag.
 
