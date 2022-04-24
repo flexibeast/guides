@@ -218,9 +218,10 @@ The complete [mdoc-examples.7 file](mdoc-examples.7) can be viewed directly with
 $ man ./mdoc-examples.7
 ```
 
-Here's a screencap of formatted output:
+The resulting formatted output is visible in the following screencaps:
 
-![Image of the mdoc-examples.7 man page](mdoc-examples.png)<br>
+* [for dark-themed environments](./mdoc-examples-dark.png)
+* [for light-themed environments](./mdoc-examples-light.png)
 
 ## Detailed documentation
 
