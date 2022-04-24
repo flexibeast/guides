@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Man pages are often authored using the presentation-oriented man(7) macros. However, man pages can also be authored with the semantics-oriented mdoc(7) macros. Man pages in the mdoc(7) format can be directly viewed on any OS which uses either the `man-db` system or the `mandoc` system; for a list of OSes which can view mdoc(7) man pages "out of the box", refer to [Appendix A](#appendix-a-os-mdoc-support).
+Man pages are often authored using the presentation-oriented man(7) [roff](https://en.wikipedia.org/wiki/Roff_(software)) macros. However, man pages can also be authored with the semantics-oriented mdoc(7) roff macros. Man pages in the mdoc(7) format can be directly viewed on any OS which uses either the `man-db` system or the `mandoc` system; for a list of OSes which can view mdoc(7) man pages "out of the box", refer to [Appendix A](#appendix-a-os-mdoc-support).
 
 ## Background
 
