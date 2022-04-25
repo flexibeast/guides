@@ -177,3 +177,4 @@ $ gdbus monitor \
     --dest 'org.freedesktop.Notifications' \
     --object-path /org/freedesktop/Notifications
 ```
+A graphical interface to the active D-Bus environment is provided by [d-feet](https://wiki.gnome.org/Apps/DFeet).
