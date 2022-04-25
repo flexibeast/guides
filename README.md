@@ -1,8 +1,8 @@
 # Summary
 
-A collection of ICT guides that people might find helpful.
+A collection of ICT guides for FOSS \*n\*x-ish systems that people might find helpful.
 
-- General
+- Authoring documentation
    - [Writing man pages with mdoc(7): a quickstart guide](./mdoc-quickstart.md)
 - D-Bus
    - [D-Bus: The essentials](./dbus.md)
