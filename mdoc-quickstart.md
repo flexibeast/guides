@@ -38,7 +38,7 @@ The current de facto standard roff implementation is [groff(1)](https://man.void
 
 roff is a line-oriented language. Each line is either a control line, or a text line. Control lines have commands, such as a request or macro; text lines are plain text, with no requests/macros, but possibly some escape codes (cf. below). A control line usually has an initial `.`, followed by a request / macro. Lines that need to begin with a literal `.` are preceded a zero-width space, `\&`: `\&.`. Escape codes, which begin with a leading backslash (`\`), can be used to produce particular glyphs, such as an em dash (`\(em` -> `—`), a check mark (`\(OK` -> `✓`) or an accented character (`\(:y` -> `ÿ`); further details can be found in mandoc_char(7) or groff_char(7). Note that a literal backslash is produced by `\e`, not `\\`.
 
-When writing man pages in mdoc(7), the mdoc(7) macros should be used as much as possible; using roff requests should only be a last resort.
+When writing man pages in mdoc(7), the mdoc(7) macros should be used as much as possible; using roff requests directly should only be a last resort. For example, the roff request `.sp` requests vertical space / a blank line, but there is typically no need to use this, as mdoc(7) will usually provide a typographically appropriate amount of vertical space wherever required.
 
 ## An artificial worked example
 
