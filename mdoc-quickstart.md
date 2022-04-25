@@ -32,7 +32,7 @@ Even if you refuse to write mdoc(7) when authoring man pages, *please* try to us
 
 ## roff implementations
 
-[groff(1)](https://man.voidlinux.org/groff.1), GNU roff, is the current de facto standard roff program. However, another roff implementation is provided by [mandoc(1)](https://man.openbsd.org/mandoc.1). Both groff(1) and mandoc(1) support the mdoc(7) macro package in addition to man(7).
+The current de facto standard roff implementation is [groff(1)](https://man.voidlinux.org/groff.1). (Historical implementations include nroff, troff and ditroff; refer to [Appendix B](#appendix-b-a-brief-history-of-roff) for details). However, another roff implementation is provided by [mandoc(1)](https://man.openbsd.org/mandoc.1). Both groff(1) and mandoc(1) support the mdoc(7) macro package in addition to man(7).
 
 ## roff: the basics
 
@@ -315,4 +315,22 @@ Corrections and/or additions to this table welcome and encouraged.
 | 1990     | groff   | C++        | Unix    | James Clark              |
 +----------+---------+------------+---------+--------------------------+
 ``` 
-Corrections to this table welcome and encouraged. Further historical details can be found [here](https://man.voidlinux.org/roff.7).
+Corrections to this table welcome and encouraged.
+
+Ossanna's `roff` system actually consisted of three formatter programs. Quoting [roff.7](https://man.voidlinux.org/roff.7) from the groff package:
+
+> `troff` (typesetter roff) generated a graphical output for the [Wang] CAT typesetter as its only device.
+>
+> `nroff` produced text output suitable for terminals and line printers.
+>
+> `roff` was the reimplementation of the former runoff program with its limited features; this program was abandoned in later versions. Today, the name 'roff' is used to refer to a 'troff/nroff' system as a whole.
+
+(`troff` is pronounced "tee-roff"; `nroff` is pronounced "en-roff".)
+
+In the book "Unix Text Processing", published in 1987, the authors wrote (p.64):
+
+> The chief advantage of `troff` over `nroff` is that it allows different types of character sets, or fonts, and so lets you take full advantage of the higher-quality printing available with typesetters and laser printers. There are a number of requests, useful only in `troff`, for specifying fonts, type sizes, and the vertical spacing between lines ...
+>
+> Later, `troff` was modified to support other typesetters and ... laser printers. The later version of `troff` is often called `ditroff` (for device-independent `troff`), but many UNIX systems have changed the name of the original `troff` to `otroff` and simply call `ditroff` by the original name, `troff`.
+
+Further historical details can be found in [groff's roff.7](https://man.voidlinux.org/roff.7).
