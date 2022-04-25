@@ -306,16 +306,19 @@ Corrections and/or additions to this table welcome and encouraged.
 ## Appendix B: a brief history of roff
 
 ```
-+----------+---------+------------+---------+--------------------------+
-| Date     | System  |  Language  |   OS    | Author(s)                |
-+----------+---------+------------+---------+--------------------------+
-| 1963     | RUNOFF  | MAD        | CTSS    | Jerry Saltzer            |
-| 1969     | runoff  | BCPL       | Multics | Bob Morris, Doug McIlroy |
-| 1973     | roff    | PDP-11 asm | Unix    | Joseph Ossanna           |
-| 1975     | roff    | C          | Unix    | Brian Kernighan          |
-| 1979     | ditroff | C          | Unix    | Brian Kernighan          |
-| 1990     | groff   | C++        | Unix    | James Clark              |
-+----------+---------+------------+---------+--------------------------+
++----------+---------+------------+------------+-----------------+
+| Date     | System  | Language   | OS         | Author(s)       |
++----------+---------+------------+------------+-----------------+
+| 1964     | RUNOFF  | MAD        | CTSS       | Jerry Saltzer   |
+| 1967     | roff    | BCPL       | ?          | Robert Morris   |
+| 1969     | runoff  | BCPL       | Multics    | Douglas McIlroy |
+| 1969     | roff    | Fortran    | System/360 | Brian Kernighan |
+| 1972     | nroff   | PDP-11 asm | Unix       | Joseph Ossanna  |
+| 1973     | troff   | PDP-11 asm | Unix       | Joseph Ossanna  |
+| 1975     | roff    | C          | Unix       | Brian Kernighan |
+| 1979     | ditroff | C          | Unix       | Brian Kernighan |
+| 1990     | groff   | C++        | Unix       | James Clark     |
++----------+---------+------------+------------+-----------------+
 ``` 
 Corrections to this table welcome and encouraged.
 
@@ -335,4 +338,4 @@ In the book "Unix Text Processing", published in 1987, the authors wrote (p.64):
 >
 > Later, `troff` was modified to support other typesetters and ... laser printers. The later version of `troff` is often called `ditroff` (for device-independent `troff`), but many UNIX systems have changed the name of the original `troff` to `otroff` and simply call `ditroff` by the original name, `troff`.
 
-Further historical details can be found in [groff's roff.7](https://man.voidlinux.org/roff.7).
+A detailed history is provided on the "[History of UNIX Manpages](https://manpages.bsd.lv/history.html)" page. [groff's roff.7](https://man.voidlinux.org/roff.7) also provides a history.
