@@ -223,6 +223,8 @@ The resulting formatted output is visible in the following screencaps:
 * [for dark-themed environments](./mdoc-examples-dark.png)
 * [for light-themed environments](./mdoc-examples-light.png)
 
+Note that we made no roff requests directly; only roff macros were used.
+
 ## Detailed documentation
 
 The mdoc(7) man page contains a reference for the mdoc(7) macros (including which macros are parsed and/or callable), information about macro syntax, and a description of the standard sections of a man page and their order.
