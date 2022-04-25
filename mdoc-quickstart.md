@@ -291,20 +291,21 @@ Some real-world examples of mdoc(7) sources can be found in the following reposi
 OSes with a check mark ('✓') can display mdoc(7) man pages "out of the box", without any special configuration required on the part of the user.
 
 ```
-+--------------+---+ -----------+--------------------+
-| OS           |   | man system | Notes              |
-+--------------+---+------------+--------------------+
-| Alpine       | ✓ | mandoc     |                    |
-| Arch         | ✓ | man-db     |                    |
-| Debian       | ✓ | man-db     |                    |
-| Fedora       | ✓ | man-db     |                    |
-| FreeBSD      | ✓ | mandoc     | Since FreeBSD 10.1 |
-| Gentoo       | ✓ | man-db     | mandoc optional    |
-| macOS        | ✓ | ?          |                    |
-| OpenBSD      | ✓ | mandoc     |                    |
-| Ubuntu       | ✓ | man-db     |                    |
-| Void         | ✓ | mandoc     |                    |
-+--------------+---+------------+--------------------+
++--------------+---+ -------------+-----------------+
+| OS           |   | man system   | Notes           |
++--------------+---+--------------+-----------------+
+| Alpine       | ✓ | mandoc       |                 |
+| Arch         | ✓ | man-db/groff |                 |
+| Debian       | ✓ | man-db/groff |                 |
+| Fedora       | ✓ | man-db/groff |                 |
+| FreeBSD      | ✓ | mandoc       | Since 10.1      |
+| Gentoo       | ✓ | man-db/groff | mandoc optional |
+| macOS        | ✓ | ?            |                 |
+| NetBSD       | ✓ | mandoc       | Since 6.0       |
+| OpenBSD      | ✓ | mandoc       | Since 4.7       |
+| Ubuntu       | ✓ | man-db/groff |                 |
+| Void         | ✓ | mandoc       |                 |
++--------------+---+--------------+-----------------+
 ```
 Corrections and/or additions to this table welcome and encouraged.
 
