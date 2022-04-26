@@ -15,7 +15,7 @@ Bus names and interfaces are defined in various specifications, reference docume
 - [dconf](#dconf)
 - [Desktop Notifications Specification](#desktop-notifications-specification)
 - [File Manager Interface](#file-manager-interface)
-- [Flatpak)(#flatpak)
+- [Flatpak](#flatpak)
 - [GNOME Session](#gnome-session)
 - [hostname1](#hostname1)
 - [logind](#logind)
