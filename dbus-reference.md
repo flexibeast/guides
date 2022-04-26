@@ -24,6 +24,7 @@ For a brief overview of D-Bus, refer to [this guide](./dbus.md).
 - [PulseAudio](#pulseaudio)
 - [resolve1](#resolve1)
 - [UPower](#upower)
+- [wpa_supplicant](#wpa-supplicant)
 
 ## Accessibility / AT-SPI
 
@@ -395,3 +396,23 @@ Interfaces:
 - `org.freedesktop.UPower`
 - `org.freedesktop.UPower.Device`
 - `org.freedesktop.UPower.KbdBacklight`
+
+# wpa_supplicant
+
+[API reference](https://w1.fi/wpa_supplicant/devel/dbus.html)
+
+Bus names:
+
+- `fi.w1.wpa_supplicant1` on system bus
+
+Interfaces:
+
+- `fi.w1.wpa_supplicant1`
+- `fi.w1.wpa_supplicant1.Interface`
+- `fi.w1.wpa_supplicant1.Interface.WPS`
+- `fi.w1.wpa_supplicant1.Interface.P2PDevice`
+- `fi.w1.wpa_supplicant1.BSS`
+- `fi.w1.wpa_supplicant1.Network`
+- `fi.w1.wpa_supplicant1.Peer`
+- `fi.w1.wpa_supplicant1.Group`
+- `fi.w1.wpa_supplicant1.PersistentGroup`
