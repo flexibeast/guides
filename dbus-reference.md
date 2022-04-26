@@ -2,7 +2,7 @@
 
 For a brief overview of D-Bus, refer to [this guide](./dbus.md).
 
-*Well-known* bus names are defined in various specifications.
+Bus names and interfaces are defined in various specifications, reference documents and repositories. When a repository is linked, the methods for a given interface can be found in the XML file for that interface.
 
 ## Contents
 
