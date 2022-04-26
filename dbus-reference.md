@@ -8,6 +8,7 @@ For a brief overview of D-Bus, refer to [this guide](./dbus.md).
 
 - [Accessibility / AT-SPI](#accessibility--ati-spi)
 - [AccountsService](#accountsservice)
+- [Avahi](#avahi)
 - [BlueZ](#bluez)
 - [colord](#colord)
 - [D-Bus](#d-bus)
@@ -66,6 +67,22 @@ Interfaces:
 
 - `org.freedesktop.Accounts`
 - `org.freedesktop.Accounts.User`
+
+## Avahi
+
+[repository](https://github.com/lathiat/avahi/tree/master/avahi-daemon)
+
+Interfaces:
+
+- `org.freedesktop.Avahi.AddressResolver`
+- `org.freedesktop.Avahi.DomainBrowser`
+- `org.freedesktop.Avahi.EntryGroup`
+- `org.freedesktop.Avahi.HostNameResolver`
+- `org.freedesktop.Avahi.RecordBrowser`
+- `org.freedesktop.Avahi.Server`
+- `org.freedesktop.Avahi.ServiceBrowser`
+- `org.freedesktop.Avahi.ServiceResolver`
+- `org.freedesktop.Avahi.ServiceTypeBrowser`
 
 ## BlueZ
 
