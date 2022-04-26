@@ -22,6 +22,7 @@ For a brief overview of D-Bus, refer to [this guide](./dbus.md).
 - [Media Player Remote Interfacing Specification (MPRIS)](#media-player-remote-interfacing-specification-mpris)
 - [PolicyKit](#policykit)
 - [PulseAudio](#pulseaudio)
+- [resolve1](#resolve1)
 - [UPower](#upower)
 
 ## Accessibility / AT-SPI
@@ -371,6 +372,15 @@ Interfaces:
 - `org.PulseAudio.Ext.StreamRestore1`
 - `org.PulseAudio.Ext.StreamRestore1.RestoreEntry`
 - `org.PulseAudio.Ext.Ladspa1`
+
+## resolve1
+
+[API reference](https://www.freedesktop.org/software/systemd/man/org.freedesktop.resolve1.html)
+
+Interfaces:
+
+- `org.freedesktop.resolve1.Manager`
+- `org.freedesktop.resolve1.Link`
 
 ## UPower
 
