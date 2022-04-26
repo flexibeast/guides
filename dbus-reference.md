@@ -12,6 +12,7 @@ For a brief overview of D-Bus, refer to [this guide](./dbus.md).
 - [BlueZ](#bluez)
 - [colord](#colord)
 - [D-Bus](#d-bus)
+- [dconf](#dconf)
 - [Desktop Notifications Specification](#desktop-notifications-specification)
 - [File Manager Interface](#file-manager-interface)
 - [GNOME Session](#gnome-session)
@@ -178,6 +179,19 @@ Interfaces:
 - `org.freedesktop.DBus.Introspectable`
 - `org.freedesktop.DBus.Properties`
 - `org.freedesktop.DBus.ObjectManager`
+
+## dconf
+
+[repository](https://gitlab.gnome.org/GNOME/dconf/-/tree/master/service)
+
+Bus name:
+
+- `ca.desrt.dconf`
+
+Interfaces:
+
+- `ca.desrt.dconf.Writer`
+- `ca.desrt.dconf.ServiceInfo`
 
 ## Desktop Notifications Specification
 
