@@ -21,10 +21,7 @@ For a brief overview of D-Bus, refer to [this guide](./dbus.md).
 
 ## Accessibility / AT-SPI
 
-I have been unable to find a formal specification - http://a11y.org/d-bus is not
-displaying any content at the time of writing - so this list has been pieced
-together from the files
-[here](https://github.com/GNOME/at-spi2-core/tree/mainline/bus).
+[repository](https://github.com/GNOME/at-spi2-core/tree/mainline/bus).
 
 Bus name:
 
