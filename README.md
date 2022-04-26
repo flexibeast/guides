@@ -9,6 +9,7 @@ A collection of ICT guides for FOSS \*n\*x-ish systems that people might find he
    - [D-Bus interfaces reference](./dbus-reference.md)
 - Gentoo
    - [A minimal Gentoo kernel for your hardware](./minimal-gentoo-kernel.md)
+   - [Making man pages usable after switching from man-db to mandoc on Gentoo](./gentoo-man-pages.md)
 - Void
    - [66 on Void](https://github.com/mobinmob/void-66-services/blob/master/conf/void-66-conf.md)
    - [D-Bus on Void](./dbus-on-void.md)
