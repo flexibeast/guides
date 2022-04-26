@@ -17,6 +17,7 @@ For a brief overview of D-Bus, refer to [this guide](./dbus.md).
 - [File Manager Interface](#file-manager-interface)
 - [Flatpak)(#flatpak)
 - [GNOME Session](#gnome-session)
+- [hostname1](#hostname1)
 - [logind](#logind)
 - [Media Player Remote Interfacing Specification (MPRIS)](#media-player-remote-interfacing-specification-mpris)
 - [PolicyKit](#policykit)
@@ -292,6 +293,14 @@ Interfaces:
 - `org.gnome.SessionManager.ClientPrivate`
 - `org.gnome.SessionManager.Inhibitor`
 - `org.gnome.SessionManager.Presence`
+
+## hostname1
+
+[API reference / man page](https://manpages.debian.org/bullseye/systemd/org.freedesktop.hostname1.5.en.html)
+
+Interface:
+
+- `org.freedesktop.hostname1`
 
 ## logind
 
