@@ -7,6 +7,7 @@ For a brief overview of D-Bus, refer to [this guide](./dbus.md).
 ## Contents
 
 - [Accessibility / AT-SPI](#accessibility--ati-spi)
+- [AccountsService](#accountsservice)
 - [BlueZ](#bluez)
 - [colord](#colord)
 - [D-Bus](#d-bus)
@@ -56,6 +57,15 @@ Interfaces:
 - `org.a11y.atspi.TableCell`
 - `org.a11y.atspi.Text`
 - `org.a11y.atspi.Value`
+
+## AccountsService
+
+[repository](https://gitlab.freedesktop.org/accountsservice/accountsservice/)
+
+Interfaces:
+
+- `org.freedesktop.Accounts`
+- `org.freedesktop.Accounts.User`
 
 ## BlueZ
 
