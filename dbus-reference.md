@@ -15,6 +15,7 @@ For a brief overview of D-Bus, refer to [this guide](./dbus.md).
 - [dconf](#dconf)
 - [Desktop Notifications Specification](#desktop-notifications-specification)
 - [File Manager Interface](#file-manager-interface)
+- [Flatpak)(#flatpak)
 - [GNOME Session](#gnome-session)
 - [logind](#logind)
 - [Media Player Remote Interfacing Specification (MPRIS)](#media-player-remote-interfacing-specification-mpris)
@@ -216,6 +217,65 @@ Bus name:
 Interfaces:
 
 - `org.freedesktop.FileManager1`
+
+## Flatpak
+
+### libflatpak
+
+[API reference](https://docs.flatpak.org/en/latest/libflatpak-api-reference.html)
+
+Bus name:
+
+- `org.freedesktop.Flatpak`
+
+Interfaces:
+
+- `org.freedesktop.Flatpak.Authenticator`
+- `org.freedesktop.Flatpak.Development`
+- `org.freedesktop.Flatpak.SessionHelper`
+- `org.freedesktop.Flatpak.SystemHelper`
+
+### portal
+
+[API reference](https://docs.flatpak.org/en/latest/portal-api-reference.html)
+
+Bus name:
+
+- `org.freedesktop.portal.Flatpak`
+
+Interfaces:
+
+- `org.freedesktop.portal.Account`
+- `org.freedesktop.portal.Background`
+- `org.freedesktop.portal.Camera`
+- `org.freedesktop.portal.Device`
+- `org.freedesktop.portal.Documents`
+- `org.freedesktop.portal.DynamicLauncher`
+- `org.freedesktop.portal.Email`
+- `org.freedesktop.portal.FileChooser`
+- `org.freedesktop.portal.FileTransfer`
+- `org.freedesktop.portal.Flatpak.UpdateMonitor`
+- `org.freedesktop.portal.Flatpak`
+- `org.freedesktop.portal.GameMode`
+- `org.freedesktop.portal.Inhibit`
+- `org.freedesktop.portal.Location`
+- `org.freedesktop.portal.MemoryMonitor`
+- `org.freedesktop.portal.NetworkMonitor`
+- `org.freedesktop.portal.Notification`
+- `org.freedesktop.portal.OpenURI`
+- `org.freedesktop.portal.PowerProfileMonitor`
+- `org.freedesktop.portal.Print`
+- `org.freedesktop.portal.ProxyResolver`
+- `org.freedesktop.portal.Realtime`
+- `org.freedesktop.portal.RemoteDesktop`
+- `org.freedesktop.portal.Request`
+- `org.freedesktop.portal.ScreenCast`
+- `org.freedesktop.portal.Screenshot`
+- `org.freedesktop.portal.Secret`
+- `org.freedesktop.portal.Session`
+- `org.freedesktop.portal.Settings`
+- `org.freedesktop.portal.Trash`
+- `org.freedesktop.portal.Wallpaper`
 
 ## GNOME Session
 
