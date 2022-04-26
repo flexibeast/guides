@@ -50,8 +50,7 @@ decompress_files_and_fix_symlinks () {
 
 }
 
-for MANDIR in "/tmp/test"
-#              $(echo $MANPATH | tr ':' ' ')
+for MANDIR in $(echo $MANPATH | tr ':' ' ')
 do
     if [ -d $MANDIR ]
     then
