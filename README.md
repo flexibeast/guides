@@ -39,4 +39,4 @@ Potential contributions to this collection are welcome! Contributions will be ac
   * Use of the `mdbook-linkcheck` tool is not applicable, though links should be checked in some way.
   * The "Redirects" section is not applicable.
 
-More critera may be added in the future, as needed.
+More criteria may be added in the future, as needed.
