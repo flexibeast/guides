@@ -7,6 +7,8 @@ A collection of ICT guides for FOSS \*n\*x-ish systems that people might find he
 - D-Bus
    - [D-Bus: The essentials](./dbus.md)
    - [D-Bus interfaces reference](./dbus-reference.md)
+- Emacs
+   - [Some guidelines for reporting bugs in GNU Emacs](./emacs-bug-reporting.md)
 - Gentoo
    - [A minimal Gentoo kernel for your hardware](./minimal-gentoo-kernel.md)
    - [Making man pages usable after switching from man-db to mandoc on Gentoo](./gentoo-man-pages.md)
