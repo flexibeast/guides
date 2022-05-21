@@ -51,7 +51,7 @@ If the `/etc/portage/savedconfig/sys-kernel` directory does not already exist, c
 
 Be sure to include the leading `.` in front of `config`!
 
-The `/etc/portage/savedconfig/sys-kernel/gentoo-kernel` file will be used when compiling and installing the kernel:
+The `/etc/portage/savedconfig/sys-kernel/gentoo-kernel` file will be used when compiling and installing the kernel.
 
 Now add the `savedconfig` USE flag for `sys-kernel/gentoo-kernel` in the appropriate place in `/etc/portage/`. If no USE flags have yet been specified:
 
