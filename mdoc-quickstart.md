@@ -78,7 +78,7 @@ Next, the NAME section:
 .Nd print example mdoc source to stdout
 ```
 
-The `Sh` macro is for a Section Header. In this instance, it's passed the argument `NAME`, which should be capitalised.
+The `Sh` macro is for a Section Header. In this instance, it's passed the argument `NAME`; the argument of `Sh` should be capitalised.
 
 The `Nm` macro is for both defining and producing the name of the software. In this instance, it's passed the argument `mdoc-examples`, which defines what will be produced by `Nm` on its own - cf. below.
 
