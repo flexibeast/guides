@@ -147,7 +147,7 @@ This section documents the options mentioned in the SYNOPSIS section.
 
 The `Bl` macro Begins a List; the `El` macro Ends the List. The `-tag` argument specifies that item bodies should be indented by the value of the `-width` argument.
 
-The `It` macro is a list ITem. It is parsed, so we use the `Fl` macro as its argument, with a literal as the argument to the `Fl` macro.
+The `It` macro is a list Item. It's parsed, so we use the `Fl` macro as its argument, with a literal as the argument to the `Fl` macro.
 
 The preceding will produce something like:
 
