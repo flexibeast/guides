@@ -25,7 +25,7 @@ A collection of ICT guides for FOSS \*n\*x-ish systems that people might find he
 
 # Contributions
 
-Potential contributions to this collection are welcome! Contributions will be accepted at the discretion of the owner of this repository, but must meet at least the following criteria:
+Potential contributions to this collection are welcome! Contributions will be accepted at the discretion of the owner of this repository, but must at least:
 
 * Be related to at least one FOSS \*n\*x-ish OS. Guides for proprietary OSes like Windows, macOS, Android and iOS will not be accepted.
 
