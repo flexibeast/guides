@@ -60,6 +60,12 @@ Now add the `savedconfig` USE flag for `sys-kernel/gentoo-kernel` in the appropr
 # echo 'sys-kernel/gentoo-kernel savedconfig' > /etc/portage/package.use/kernel
 ```
 
+Remove the `-bin` kernel package:
+
+```
+# emerge -c gentoo-kernel-bin
+```
+
 Compile and install the kernel:
 
 ```
