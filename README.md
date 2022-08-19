@@ -6,6 +6,7 @@ A collection of ICT guides for FOSS \*n\*x-ish systems that people might find he
    - [Writing man pages with mdoc(7): a quickstart guide](./mdoc-quickstart.md)
 - D-Bus
    - [D-Bus: The essentials](./dbus.md)
+   - [D-Bus and X sessions](./dbus-and-x-sessions.md)
    - [D-Bus interfaces reference](./dbus-reference.md)
 - Emacs
    - [Some guidelines for reporting bugs in GNU Emacs](./emacs-bug-reporting.md)
@@ -14,7 +15,6 @@ A collection of ICT guides for FOSS \*n\*x-ish systems that people might find he
    - [Making man pages usable after switching from man-db to mandoc on Gentoo](./gentoo-man-pages.md)
 - Void
    - [66 on Void](https://github.com/mobinmob/void-66-services/blob/master/conf/void-66-conf.md)
-   - [D-Bus on Void](./dbus-on-void.md)
    - [Managing suckless software on Void](./suckless.md)
    - [Managing -git packages on Void](./git-packages.md)
 - ZFS

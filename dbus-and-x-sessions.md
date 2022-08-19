@@ -1,4 +1,4 @@
-# D-Bus on Void
+# D-Bus and X sessions
 
 For a short introduction to D-Bus, read [this guide](./dbus.md). It's important
 to note the distinction between a D-Bus *system bus* and a D-Bus *session bus*:
@@ -22,18 +22,15 @@ other parts of the system; other software expects to be able to use a D-Bus
 software doesn't require either. Thus, whether or not you need to enable a
 system bus and/or a session bus is dependent on the software you use.
 
-On Void, the system bus is provided by the `dbus` service; as it is a system
-bus, and not a session bus, it does not set the `DBUS_SESSION_BUS_ADDRESS`
-variable.
-
-Session buses are started by your Desktop Environment (DE), or can be started
-with `dbus-run-session`, which is
+The system bus (e.g. as started by Void Linux's `dbus` service) does
+not provide a *session* bus. Session buses are started by your Desktop
+Environment (DE), or can be started with `dbus-run-session`, which is
 [preferred](https://github.com/void-linux/void-docs/pull/263/files#r426368717)
 to `dbus-start`. Both `dbus-run-session` and `dbus-start` set the
-`DBUS_SESSION_BUS_ADDRESS` environment variable. However, only `dbus-start`
-writes that the value of that variable (together with the values of
-`DBUS_SESSION_BUS_PID` and `DBUS_SESSION_BUS_WINDOWID`) to a file in
-`~/.dbus/session-bus/`.
+`DBUS_SESSION_BUS_ADDRESS` environment variable. However, only
+`dbus-start` writes that the value of that variable (together with the
+values of `DBUS_SESSION_BUS_PID` and `DBUS_SESSION_BUS_WINDOWID`) to a
+file in `~/.dbus/session-bus/`.
 
 The usual way to use `dbus-run-session` is to use it in `~/.xinitrc` to call a
 Window Manager (WM), so that a session bus is available to software you run from
