@@ -2,8 +2,9 @@
 
 A collection of ICT guides for FOSS \*n\*x-ish systems that people might find helpful.
 
-- Authoring documentation
+- Documents and Documentation
    - [Writing man pages with mdoc(7): a quickstart guide](./mdoc-quickstart.md)
+   - [Creating a minimal EPUB](./minimal-epub.md)
 - D-Bus
    - [D-Bus: The essentials](./dbus.md)
    - [D-Bus and X sessions](./dbus-and-x-sessions.md)
