@@ -93,6 +93,15 @@ EPUB/nav.xhtml
 EPUB/[first part].xhtml
 EPUB/[additional XHTML parts]
 ```
+
+As mentioned earlier, `mimetype` must be the first file in the archive. Additionally, files in the archive must not save 'extra' file attributes, such as file times; this necessitates the use of zip(1)'s `-X`/`--no-extra` option. Therefore, assuming the current directory contains the `mimetype` file and the `META-INF` and `EPUB` directories, one could create an EPUB called `document.epub` in one's home directory by doing:
+
+```
+$ zip -X ~/document.epub mimetype
+$ zip -urX ~/document.epub *
+```
+where the `-u` option updates an existing archive, and the `-r` option requests recursive directory traversal.
+
 ## epub-create
 
 [epub-create](https://github.com/flexibeast/epub-create) is a simple, self-contained POSIX shell script to automate the above process. When supplied with the name of a directory with a collection of (non-binary) files, the script:
