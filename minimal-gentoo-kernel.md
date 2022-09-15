@@ -19,6 +19,12 @@ Here are the steps.
 
 This will install the latest precompiled Gentoo kernel. Restart the system and boot from that kernel. If all the system's hardware is detected and successfully functioning, proceed to the next step. Otherwise, determine the cause of any issues and resolve them before continuing.
 
+Note that any pluggable devices intended to be used on the system should be plugged in, so that the relevant kernel modules get loaded. The `sys-kernel/modprobed-db` package in the GURU repository can be used to create a list of modules that were needed over time:
+
+> Modprobed-db simply logs every module ever probed on the target system to a text-based database ($XDG_CONFIG_HOME/modprobed-db) which can be read directly by "make localmodconfig"
+
+-- https://github.com/graysky2/modprobed-db
+
 Next:
 
 ```
