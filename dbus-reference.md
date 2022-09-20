@@ -23,6 +23,7 @@ Bus names and interfaces are defined in various specifications, reference docume
 - [PolicyKit](#policykit)
 - [PulseAudio](#pulseaudio)
 - [resolve1](#resolve1)
+- [UDisks2](#udisks2)
 - [UPower](#upower)
 - [wpa_supplicant](#wpa-supplicant)
 
@@ -382,6 +383,47 @@ Interfaces:
 
 - `org.freedesktop.resolve1.Manager`
 - `org.freedesktop.resolve1.Link`
+
+## UDisks2
+
+[API reference](http://storaged.org/doc/udisks2-api/latest/ref-dbus.html)
+
+Bus names:
+
+- `org.freedesktop.UDisks2` on system bus
+
+Interfaces:
+
+- `org.freedesktop.UDisks2.Manager`
+- `org.freedesktop.UDisks2.Drive`
+- `org.freedesktop.UDisks2.Drive.Ata`
+- `org.freedesktop.UDisks2.MDRaid`
+- `org.freedesktop.UDisks2.Block`
+- `org.freedesktop.UDisks2.Partition`
+- `org.freedesktop.UDisks2.PartitionTable`
+- `org.freedesktop.UDisks2.Filesystem`
+- `org.freedesktop.UDisks2.Swapspace`
+- `org.freedesktop.UDisks2.Encrypted`
+- `org.freedesktop.UDisks2.Loop`
+- `org.freedesktop.UDisks2.Job`
+- `org.freedesktop.UDisks2.Drive.LSM`
+- `org.freedesktop.UDisks2.Drive.LsmLocal`
+- `org.freedesktop.UDisks2.Block.LVM2`
+- `org.freedesktop.UDisks2.LogicalVolume`
+- `org.freedesktop.UDisks2.VDOVolume`
+- `org.freedesktop.UDisks2.Manager.LVM2`
+- `org.freedesktop.UDisks2.PhysicalVolume`
+- `org.freedesktop.UDisks2.VolumeGroup`
+- `org.freedesktop.UDisks2.ISCSI.Session`
+- `org.freedesktop.UDisks2.Manager.ISCSI.Initiator`
+- `org.freedesktop.UDisks2.Manager.BTRFS`
+- `org.freedesktop.UDisks2.Filesystem.BTRFS`
+- `org.freedesktop.UDisks2.Manager.ZRAM`
+- `org.freedesktop.UDisks2.Block.ZRAM`
+- `org.freedesktop.UDisks2.Manager.Bcache`
+- `org.freedesktop.UDisks2.Block.Bcache`
+- `org.freedesktop.UDisks2.Manager.VDO`
+- `org.freedesktop.UDisks2.Block.VDO`
 
 ## UPower
 
