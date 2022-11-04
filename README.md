@@ -2,6 +2,8 @@
 
 A collection of ICT guides for FOSS \*n\*x-ish systems that people might find helpful.
 
+## Guides
+
 - Documents and Documentation
    - [Writing man pages with mdoc(7): a quickstart guide](./mdoc-quickstart.md)
    - [Creating a minimal EPUB](./minimal-epub.md)
@@ -25,7 +27,12 @@ A collection of ICT guides for FOSS \*n\*x-ish systems that people might find he
    - [Using ZFS snapshots and `zfsbootmenu` to bisect a `libvirt`
       "regression"](./libvirt-zbm-notes.md)
 
-# Contributions
+## Other resources
+
+- [POSIX utilities](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/contents.html)
+- [The POSIX shell command language](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/V3_chap02.html#tag_18)
+
+## Contributions
 
 Potential contributions to this collection are welcome! Contributions will be accepted at the discretion of the owner of this repository, but must at least:
 
