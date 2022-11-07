@@ -10,6 +10,7 @@ Bus names and interfaces are defined in various specifications, reference docume
 - [AccountsService](#accountsservice)
 - [Avahi](#avahi)
 - [BlueZ](#bluez)
+- [CloudProviders](#cloudproviders)
 - [colord](#colord)
 - [D-Bus](#d-bus)
 - [dconf](#dconf)
@@ -153,6 +154,15 @@ Interfaces:
 - `org.bluez.ThermometerManager1`
 - `org.bluez.Thermometer1`
 - `org.bluez.ThermometerWatcher1`
+
+## CloudProviders
+
+[specification](https://csoriano.gitlab.io/libcloudprovidersweb/cloudproviders-dbus.html)
+
+Interfaces:
+
+- `org.freedesktop.CloudProviders.Account`
+- `org.freedesktop.CloudProviders.Provider`
 
 ## colord
 
