@@ -10,9 +10,18 @@ A small collection of tips that don't obviously seem to belong to any particular
 # emerge --ignore-world dev-libs/icu:0/71.1
 ```
 
-### Try updating to latest version of dep and rebuilding rdeps
+### Try updating to latest version and rebuilding rdeps
+
+In shells with POSIX-style sh(1p) word splitting (or with such splitting enabled):
 
 ```
 # emerge -au dev-libs/boost:0/1.79.0 \
     $( qdepends -CQqqF'%{CAT}/%{PN}:%{SLOT}' '^dev-libs/boost:0/1.79.0' )
+```
+
+In bash:
+
+```
+# IFS=' ' emerge -au dev-libs/boost:0/1.79.0 \
+    $( qdepends -CQqqF'%{CAT}/%{PN}:%{SLOT}' '^dev-libs/boost:0/1.79.0' | tr '\n' ' ' )
 ```
