@@ -60,7 +60,7 @@ and [git-checkout(1)](https://man.voidlinux.org/git-checkout.1).
 
 ```
 do_fetch() {
-    git clone <project_url> ${wkrsrc} --depth 1
+    git clone <project_url> ${wrksrc} --depth 1
     cd ${wrksrc}
     git checkout <feature_branch>
 }
