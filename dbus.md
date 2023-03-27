@@ -178,3 +178,7 @@ $ gdbus monitor \
     --object-path /org/freedesktop/Notifications
 ```
 A graphical interface to the active D-Bus environment is provided by [d-feet](https://wiki.gnome.org/Apps/DFeet).
+
+## Further reading
+
+A more detailed overview of the D-Bus architecture can be found in [this tutorial](https://dbus.freedesktop.org/doc/dbus-tutorial.html).
