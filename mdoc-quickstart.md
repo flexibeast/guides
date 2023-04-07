@@ -296,6 +296,7 @@ OSes with a check mark ('✓') can display mdoc(7) man pages "out of the box", w
 +--------------+---+ -------------+--------------------------+
 | OS           |   | man system   | Notes                    |
 +--------------+---+--------------+--------------------------+
+| Adélie       | ✓ | mandoc       |                          |
 | Alpine       | ✓ | mandoc       |                          |
 | Arch         | ✓ | man-db/groff |                          |
 | Debian       | ✓ | man-db/groff |                          |
