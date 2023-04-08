@@ -298,14 +298,16 @@ OSes with a check mark ('✓') can display mdoc(7) man pages "out of the box", w
 +--------------+---+--------------+--------------------------+
 | Adélie       | ✓ | mandoc       |                          |
 | Alpine       | ✓ | mandoc       |                          |
-| Arch         | ✓ | man-db/groff |                          |
+| Arch         | ✓ | man-db/groff | mandoc optional          |
 | Debian       | ✓ | man-db/groff |                          |
-| Fedora       | ✓ | man-db/groff |                          |
+| Fedora       | ✓ | man-db/groff | mandoc optional          |
 | FreeBSD      | ✓ | mandoc       | Since 10.1               |
 | Gentoo       | ✓ | man-db/groff | mandoc optional          |
+| illumos      | ✓ | mandoc       |                          |
 | macOS        | ✓ | mandoc       | Since 11 (November 2020) |
 | NetBSD       | ✓ | mandoc       | Since 6.0                |
 | OpenBSD      | ✓ | mandoc       | Since 4.7                |
+| openSUSE     | ✓ | man-db/groff | mandoc optional          |
 | Ubuntu       | ✓ | man-db/groff |                          |
 | Void         | ✓ | mandoc       |                          |
 +--------------+---+--------------+--------------------------+
