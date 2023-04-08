@@ -293,24 +293,25 @@ Some real-world examples of mdoc(7) sources can be found in the following reposi
 OSes with a check mark ('✓') can display mdoc(7) man pages "out of the box", without any special configuration required on the part of the user.
 
 ```
-+--------------+---+ -------------+--------------------------+
-| OS           |   | man system   | Notes                    |
-+--------------+---+--------------+--------------------------+
-| Adélie       | ✓ | mandoc       |                          |
-| Alpine       | ✓ | mandoc       |                          |
-| Arch         | ✓ | man-db/groff | mandoc optional          |
-| Debian       | ✓ | man-db/groff |                          |
-| Fedora       | ✓ | man-db/groff | mandoc optional          |
-| FreeBSD      | ✓ | mandoc       | Since 10.1               |
-| Gentoo       | ✓ | man-db/groff | mandoc optional          |
-| illumos      | ✓ | mandoc       |                          |
-| macOS        | ✓ | mandoc       | Since 11 (November 2020) |
-| NetBSD       | ✓ | mandoc       | Since 6.0                |
-| OpenBSD      | ✓ | mandoc       | Since 4.7                |
-| openSUSE     | ✓ | man-db/groff | mandoc optional          |
-| Ubuntu       | ✓ | man-db/groff |                          |
-| Void         | ✓ | mandoc       |                          |
-+--------------+---+--------------+--------------------------+
++--------------+---+ -------------+--------------------------------------+
+| OS           |   | man system   | Notes                                |
++--------------+---+--------------+--------------------------------------+
+| Adélie       | ✓ | mandoc       |                                      |
+| Alpine       | ✓ | mandoc       |                                      |
+| Arch         | ✓ | man-db/groff | mandoc optional                      |
+| Debian       | ✓ | man-db/groff |                                      |
+| Fedora       | ✓ | man-db/groff | mandoc optional                      |
+| FreeBSD      | ✓ | mandoc       | Since 10.1                           |
+| Gentoo       | ✓ | man-db/groff | mandoc optional                      |
+| illumos      | ✓ | mandoc       |                                      |
+| macOS        | ✓ | mandoc       | Since 11 (November 2020)             |
+|              |   |              | 13 made `man` a wrapper for `mandoc` |
+| NetBSD       | ✓ | mandoc       | Since 6.0                            |
+| OpenBSD      | ✓ | mandoc       | Since 4.7                            |
+| openSUSE     | ✓ | man-db/groff | mandoc optional                      |
+| Ubuntu       | ✓ | man-db/groff |                                      |
+| Void         | ✓ | mandoc       |                                      |
++--------------+---+--------------+--------------------------------------+
 ```
 Corrections and/or additions to this table welcome and encouraged.
 
