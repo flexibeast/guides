@@ -46,7 +46,7 @@ Next:
 # make localmodconfig
 ```
 
-The second line will automatically create a modules-based config based, compiling only the modules the running system has actually loaded (and/or their dependencies). An alternative `make` target is `localyesconfig`, which will compile the necessary hardware support directly into the kernel, rather than into modules.
+The second line will automatically create a modules-based config, compiling only the modules the running system has actually loaded (and/or their dependencies). An alternative `make` target is `localyesconfig`, which will compile the necessary hardware support directly into the kernel, rather than into modules.
 
 If the `/etc/portage/savedconfig/sys-kernel` directory does not already exist, create it, then copy the new config into that directory, with the name `gentoo-kernel`:
 
