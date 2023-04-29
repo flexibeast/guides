@@ -129,4 +129,6 @@ https://pandoc.org
 
 * [EPUB Packages 3.2](https://www.w3.org/publishing/epub32/epub-packages.html)
 
+* [EPUB 3 Structural Semantics Vocabulary 1.1](https://www.w3.org/TR/epub-ssv-11/)
+
 * [EPUBCheck](https://www.w3.org/publishing/epubcheck/)
