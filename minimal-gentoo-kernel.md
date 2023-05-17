@@ -89,3 +89,5 @@ Finally, assuming GRUB is the system bootloader, and that kernels are stored in 
 ```
 
 You should now be able to boot with the new kernel.
+
+Finally, note that using `gentoo-kernel` means that kernel updates are handled like any other package, as part of system updates; manually updating the kernel is not required.
