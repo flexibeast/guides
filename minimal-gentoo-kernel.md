@@ -90,4 +90,6 @@ Finally, assuming GRUB is the system bootloader, and that kernels are stored in 
 
 You should now be able to boot with the new kernel.
 
-Finally, note that using `gentoo-kernel` means that kernel updates are handled like any other package, as part of system updates; manually updating the kernel is not required.
+Using `gentoo-kernel` means that kernel updates are handled like any other package, as part of system updates; manually updating the kernel is not required, nor is running dracut after a kernel update. However, users of GRUB (rather than e.g. rEFInd) will still need to run `grub-mkconfig` after a kernel update. Additionally, this process doesn't provide the user with an interactive session about new kernel configuration options; whether this is an issue depends on your system and use-cases.
+
+
