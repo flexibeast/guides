@@ -45,7 +45,8 @@ There are two primary D-Bus buses: a *system bus*, and a *session
 bus*. It's important to note that *these are distinct buses, used for
 different purposes, and are not simply the same bus being run in two
 different ways*. The two buses can be viewed in a GUI environment via
-[QDBusViewer](https://doc.qt.io/qt-5/qdbusviewer.html).
+[QDBusViewer](https://doc.qt.io/qt-5/qdbusviewer.html) or
+[d-feet](https://wiki.gnome.org/Apps/DFeet).
 
 A *system bus* relates to services provided by the OS and system daemons, and
 communication between different user sessions. The system bus is used for
@@ -177,7 +178,6 @@ $ gdbus monitor \
     --dest 'org.freedesktop.Notifications' \
     --object-path /org/freedesktop/Notifications
 ```
-A graphical interface to the active D-Bus environment is provided by [d-feet](https://wiki.gnome.org/Apps/DFeet).
 
 ## Further reading
 
