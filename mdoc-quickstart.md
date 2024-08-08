@@ -189,7 +189,7 @@ Next, the SEE ALSO section:
 .Xr roff 7
 ```
 
-Man pages referenced in this section should be in alphabetical order, and the list of man pages should be separated by commas (`,`). Note how the commas are a distinct final argument on the request lines; this allows the punctuation to be handled appropriately.
+Man pages referenced in this section should sorted by section number, then alphabetically within each section grouping, and the list of man pages should be separated by commas (`,`). Note how the commas are a distinct final argument on the request lines; this allows the punctuation to be handled appropriately.
 
 The preceding will produce something like:
 
