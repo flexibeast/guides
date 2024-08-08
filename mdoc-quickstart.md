@@ -52,7 +52,7 @@ Firstly, the standard preamble:
 .Os
 ```
 
-The `Dd` macro is for the Document Date, i.e. the date the source was last edited. Use American-style date format: in [strftime(3)](https://man.openbsd.org/strftime.3) terms, the format is `%B%e, %Y`.
+The `Dd` macro is for the Document Date, i.e. the date the source was last edited. Use US-style date format: in [strftime(3)](https://man.openbsd.org/strftime.3) terms, the format is `%B%e, %Y`.
 
 The `Dt` macro is for the Document Title, i.e. the name of the software being documented, and its manual section.
 
