@@ -5,8 +5,8 @@ people from having to distill the core concepts from more detailed
 documents elsewhere. It generally follows the [conventions used in the
 Void
 Handbook](https://docs.voidlinux.org/about/about-this-handbook.html). For
-tips on using D-Bus in the context of Void, refer to [this
-guide](./dbus-on-void.md).
+tips on using D-Bus in the context of X sessions, refer to [this
+guide](./dbus-and-x-sessions.md).
 
 This document is purely descriptive; nothing in it should be taken as implying
 either support or criticism of D-Bus and/or its design. Technical corrections
