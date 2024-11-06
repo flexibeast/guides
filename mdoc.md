@@ -1,18 +1,20 @@
-# Writing man pages with mdoc(7): a quickstart guide
+# mdoc(7): a language for writing man pages
 
 ## Introduction
 
-Man pages are often authored using the presentation-oriented man(7) [roff](https://en.wikipedia.org/wiki/Roff_(software)) macros. However, man pages can also be authored with the semantics-oriented mdoc(7) roff macros. Man pages in the mdoc(7) format can be directly viewed on any OS which uses either the `man-db` system or the `mandoc` system; for a list of OSes which can view mdoc(7) man pages "out of the box", refer to [Appendix A](#appendix-a-os-mdoc-support).
+Man pages are often authored using the presentation-oriented man(7) [roff](https://en.wikipedia.org/wiki/Roff_(software)) macros. *roff* is a typesetting language ultimately descended from [RUNOFF](https://en.wikipedia.org/wiki/RUNOFF), the first computer typesetting system, developed for [the CTSS project](https://en.wikipedia.org/wiki/Compatible_Time-Sharing_System) in 1963. (Refer to [Appendix A](#appendix-a-a-brief-history-of-roff) for a brief historical timeline.)
+
+In roff, formatting is carried out by the means of *requests* - formatting commands. To simplify repetitive formatting tasks, requests can be grouped into macros, each of which performs a particular function (e.g. formatting text as a heading). A collection of macros all serving a shared purpose - for example, formatting a letter - is called a *macro package*. man(7) is a macro package.
+
+However, man(7) is not the only macro package available for formatting man pages. Man pages can also be authored with the semantics-oriented [mdoc(7)](https://man.openbsd.org/mdoc.7) macros. Man pages in the mdoc(7) format can be directly viewed on any OS which uses either the `man-db` system or the `mandoc` system. (For a list of OSes which can view mdoc(7) man pages "out of the box", refer to [Appendix B](#appendix-b-os-mdoc-support).)
+
+This document tries to give a sense of what it's like to write man pages using mdoc(7).
 
 ## Background
 
-Even if one's software for \*n\*x-ish systems has a comprehensive manual in another format, it should also have at least a brief man page providing information about running the program: how it can be called from the command line (including any available options), which environment variables it uses and affects (if any), the files it uses (e.g. for configuration), its possible exit statuses, what standards it conforms to (if any), and related programs.
+Unfortunately, the fact that the man(7) macros are presentation-oriented limits the usefulness of the man page system: presentational markup doesn't indicate the nature of what's being marked up. For example, the italicisation of text might indicate one of any number of things: that the text is a placeholder for an argument to a command or function, that the text is a program, that the text is in a natural language different from the rest of the text, or merely that the text is being emphasised to the reader. Further, there is not necessarily any consistency in these usages from one set of documentation to the next.
 
-On Linux, the standard language used to write man pages is [man(7)](https://man.openbsd.org/man.7). man(7) is a set of roff macros; roff is a typesetting language ultimately descended from [RUNOFF](https://en.wikipedia.org/wiki/RUNOFF), the first computer typesetting system, developed for [the CTSS project](https://en.wikipedia.org/wiki/Compatible_Time-Sharing_System) in 1963. Refer to [Appendix B](#appendix-b-a-brief-history-of-roff) for a brief historical timeline.
-
-Unfortunately, the man(7) macros are presentation-oriented, rather than semantics-oriented. This limits the usefulness of the man page system, as the 'markup' provided by these macros do not indicate the nature of what's being marked up. For example, the italicisation of text might indicate one of any number of things: that the text is a placeholder for an argument to a command or function, that the text is a program, that the text is in a natural language different from the rest of the text, or merely that the text is being emphasised to the reader. Further, there is not necessarily any consistency in these usages from one set of documentation to the next.
-
-Fortunately, the man(7) macros are not the only possibility: one can also write man pages with the [mdoc(7)](https://man.openbsd.org/mdoc.7) macros. The mdoc(7) macros *are* semantically oriented, so that, for example, if one wishes to search for all man pages referencing the `PATH` environment variable, one can do:
+In contrast, the mdoc(7) macros are semantics-oriented, so that, for example, if one wishes to search for all man pages referencing the `PATH` environment variable, one can do:
 
 ```
 $ apropos Ev=PATH
@@ -34,11 +36,13 @@ Even if you refuse to write mdoc(7) when authoring man pages, *please* try to us
 
 ## roff implementations
 
-The current de facto standard roff implementation is [groff(1)](https://man.voidlinux.org/groff.1). (Historical implementations include nroff, troff and ditroff; refer to [Appendix B](#appendix-b-a-brief-history-of-roff) for details). However, another roff implementation is provided by [mandoc(1)](https://man.openbsd.org/mandoc.1). Both groff(1) and mandoc(1) support the mdoc(7) macro package in addition to man(7).
+The current de facto standard roff implementation is [groff(1)](https://man.voidlinux.org/groff.1). (Historical implementations include nroff, troff and ditroff; refer to [Appendix B](#appendix-b-a-brief-history-of-roff) for details). However, [mandoc(1)](https://man.openbsd.org/mandoc.1) implements a subset of roff relevant to the formatting of man pages. Both groff(1) and mandoc(1) support the mdoc(7) macro package in addition to man(7).
 
 ## roff: the basics
 
-roff is a line-oriented language. Each line is either a control line, or a text line. Control lines have commands, such as a request or macro; text lines are plain text, with no requests/macros, but possibly some escape sequences (cf. below). A control line usually has an initial `.`, followed by a request / macro. Lines that need to begin with a literal `.` are preceded a zero-width space, `\&`: `\&.`. Escape sequences, which begin with a leading backslash (`\`), can be used to produce particular glyphs, such as an em dash (`\(em` -> `—`), a check mark (`\(OK` -> `✓`) or an accented character (`\(:y` -> `ÿ`); further details can be found in mandoc_char(7) or groff_char(7). Note that a literal backslash is produced by `\e`, not `\\`, and that a comment line is introduced by `.\"`.
+roff is a line-oriented language. Each line is either a control line, or a text line. Control lines have commands, such as a request or macro; text lines are plain text, with no requests/macros, but possibly some escape sequences (cf. below). A control line usually has an initial `.`, followed by a request / macro. Lines that need to begin with a literal `.` are preceded a zero-width space, `\&`: `\&.`. Both groff(1) and mandoc(1) accept the use of `'` as a control character, but mandoc(1) treats it just like `.`, whereas groff(1) treats it as a no-break control character; refer to the [groff(7)](https://man.voidlinux.org/groff.7) man page for details. (groff(7) also notes "Employing the no-break control character to invoke requests that don't cause breaks is harmless but poor style.")
+
+Escape sequences, which begin with a leading backslash (`\`), can be used to produce particular glyphs, such as an em dash (`\(em` -> `—`), a check mark (`\(OK` -> `✓`) or an accented character (`\(:y` -> `ÿ`); further details can be found in mandoc_char(7) or groff_char(7). Note that a literal backslash is produced by `\e`, not `\\`, and that a comment line is introduced by `.\"`.
 
 When writing man pages in mdoc(7), the mdoc(7) macros should be used as much as possible; using roff requests directly should only be a last resort. For example, the roff request `.sp` requests vertical space / a blank line, but there is typically no need to use this, as mdoc(7) will usually provide a typographically appropriate amount of vertical space wherever required.
 
@@ -103,7 +107,7 @@ Next, the SYNOPSIS section:
 
 The use of `Nm` without arguments will produce the name of the software as previously defined, i.e. "mdoc-examples".
 
-The `Op` macro is for producing text about an Optional argument, and the `Fl` macro indicates a Flag. This line demonstrates *parsed* and *callable* macros: the `Op` macro is parsed for further macros, which themselves must be callable. `Fl` is a callable macro, which takes as its argument the literal for the flag.
+The `Op` macro is for producing text about an Optional argument, and the `Fl` macro indicates a Flag. This line demonstrates *parsed* and *callable* macros: the `Op` macro is a *parsed* macro, which means it gets parsed for callable macros. This is why we can use `Fl` here: `Fl` is a callable macro, which takes as its argument the literal for the flag. Details about the parsed and callable statuses of mdoc(7) macros can be found in the "MACRO SYNTAX" section of the mdoc(7) man page.
 
 The preceding will produce something like:
 
@@ -120,17 +124,18 @@ Next, the DESCRIPTION section:
 prints some example
 .Xr mdoc 7
 source to stdout.
+The example source is for illustrative purposes only.
 ```
 
 The `Xr` macro is for Cross References to other man pages. It takes two arguments: the name of the man page, and its section.
 
-Note that any formatting command is on a distinct line of its own, rather than being inline.
+As a stylistic point, mandoc(1) prefers that a new sentence start on a new line, but this is not required.
 
 The preceding will produce something like:
 
 ```
 DESCRIPTION
-    mdoc-examples prints some example mdoc(7) source to stdout.
+    mdoc-examples prints some example mdoc(7) source to stdout. The example source is for illustrative purposes only.
 ```
 
 Next, the OPTIONS section:
@@ -147,9 +152,9 @@ Print usage information to stdout.
 
 This section documents the options mentioned in the SYNOPSIS section.
 
-The `Bl` macro Begins a List; the `El` macro Ends the List. The `-tag` argument specifies that item bodies should be indented by the value of the `-width` argument.
+The `Bl` macro Begins a List; the `El` macro Ends the List. The `-tag` argument specifies that item bodies should be indented based on the width of the value supplied to the `-width` argument; in this case, the indentation will be the width of a single `x`.
 
-The `It` macro is a list Item. It's parsed, so we use the `Fl` macro as its argument, with a literal as the argument to the `Fl` macro.
+The `It` macro is a list Item. It's a parsed macro, so we can use the `Fl` macro in its argument, with a literal as the argument to the `Fl` macro.
 
 The preceding will produce something like:
 
@@ -168,17 +173,17 @@ Next, the EXIT STATUS section:
 If
 .Nm
 is able to print the examples, it exits with status code 0.
-Otherwise, it exits with status code -1.
 ```
-Note that a new sentence starts on a new line. To start a new paragraph, use the `Pp` macro.
 
 The preceding will produce something like:
 
 ```
 EXIT STATUS
     If mdoc-examples is able to print the examples, it exits with status code
-    0.  Otherwise, it exits with status code -1.
+    0.
 ```
+
+If appropriate, the `Ex -std` macro can be used to provide boilerplate text about exit values, e.g. "The mdoc-examples utility exits 0 on success, and >0 if an error occurs."
 
 Next, the SEE ALSO section:
 
@@ -189,7 +194,8 @@ Next, the SEE ALSO section:
 .Xr roff 7
 ```
 
-Man pages referenced in this section should sorted by section number, then alphabetically within each section grouping, and the list of man pages should be separated by commas (`,`). Note how the commas are a distinct final argument on the request lines; this allows the punctuation to be handled appropriately.
+Man pages referenced in this section should be sorted by section number, then alphabetically within each section grouping, and the list of man pages should be separated by commas (`,`). Note how the commas are a distinct final argument on the request lines; this allows the punctuation to be handled appropriately (i.e. being put immediately after the closing parentheses, without any space between them).
+
 
 The preceding will produce something like:
 
@@ -225,13 +231,13 @@ The resulting formatted output is visible in the following screencaps:
 * [for dark-themed environments](./mdoc-examples-dark.png)
 * [for light-themed environments](./mdoc-examples-light.png)
 
-Note that we made no roff requests directly; only roff macros were used.
+Note that we made no roff requests directly; only mdoc(7) macros were used.
 
 ## Detailed documentation
 
 The mdoc(7) man page contains a reference for the mdoc(7) macros (including which macros are parsed and/or callable), information about macro syntax, and a description of the standard sections of a man page and their order.
 
-The man pages for other documentation varies depending on whether an OS is `mandoc`-based or `man-db`-based; refer to [Appendix A](#appendix-a-os-mdoc-support) for a list of the defaults for various OSes.
+The man pages for other documentation varies depending on whether an OS is `mandoc`-based or `man-db`-based; refer to [Appendix B](#appendix-B-os-mdoc-support) for a list of the defaults for various OSes.
 
 ### mandoc
 
@@ -253,9 +259,14 @@ $ mandoc -T lint mdoc-examples.7
 
 Refer to the DIAGNOSTICS section of the mandoc(1) man page for a detailed listing of errors, warnings and style issues.
 
+## Associated software
+
+The *tbl* language can be used to add tables to a roff document. mandoc(1) only accepts a subset of the tbl language; this subset is documented in the [tbl(7)](https://man.openbsd.org/tbl.7) man page. However, groff(1) utilises a distinct [tbl(1)](https://man.voidlinux.org/man1/tbl.1) program to format tables.
+
 ## Output formats
 
 mdoc(7) man pages can be converted to other formats via the `-T` option of mandoc(1) and groff(1). Available output formats include `ascii`, `html`, `pdf` and `utf8`; `markdown` is available with mandoc(1) but not groff(1).
+
 
 ## Real-world examples
 
@@ -265,6 +276,10 @@ Some real-world examples of mdoc(7) sources can be found in the following reposi
 * [s6-man-pages](https://github.com/flexibeast/s6-man-pages)
 * [s6-networking-man-pages](https://github.com/flexibeast/s6-networking-man-pages)
 * [s6-portable-utils-man-pages](https://github.com/flexibeast/s6-portable-utils-man-pages)
+
+## Acknowledgements
+
+Thanks to "onf" for constructive feedback and criticism regarding issues with an earlier version of this document.
 
 ## Reference
 
@@ -288,34 +303,7 @@ Some real-world examples of mdoc(7) sources can be found in the following reposi
 
 * \[DO87\] Dale Dougherty and Tim O'Reilly. [Unix Text Processing](https://www.oreilly.com/openbook/utp/). Hayden Books, 1987.
 
-## Appendix A: OS mdoc support
-
-OSes with a check mark ('✓') can display mdoc(7) man pages "out of the box", without any special configuration required on the part of the user.
-
-```
-+--------------+---+ -------------+--------------------------------------+
-| OS           |   | man system   | Notes                                |
-+--------------+---+--------------+--------------------------------------+
-| Adélie       | ✓ | mandoc       |                                      |
-| Alpine       | ✓ | mandoc       |                                      |
-| Arch         | ✓ | man-db/groff | mandoc optional                      |
-| Debian       | ✓ | man-db/groff |                                      |
-| Fedora       | ✓ | man-db/groff | mandoc optional                      |
-| FreeBSD      | ✓ | mandoc       | Since 10.1                           |
-| Gentoo       | ✓ | man-db/groff | mandoc optional                      |
-| illumos      | ✓ | mandoc       |                                      |
-| macOS        | ✓ | mandoc       | Since 11 (November 2020)             |
-|              |   |              | 13 made `man` a wrapper for `mandoc` |
-| NetBSD       | ✓ | mandoc       | Since 6.0                            |
-| OpenBSD      | ✓ | mandoc       | Since 4.7                            |
-| openSUSE     | ✓ | man-db/groff | mandoc optional                      |
-| Ubuntu       | ✓ | man-db/groff |                                      |
-| Void         | ✓ | mandoc       |                                      |
-+--------------+---+--------------+--------------------------------------+
-```
-Corrections and/or additions to this table welcome and encouraged.
-
-## Appendix B: a brief history of roff
+## Appendix A: a brief history of roff
 
 ```
 +----------+---------+------------+------------+-----------------+
@@ -351,3 +339,30 @@ In the book "Unix Text Processing", published in 1987, the authors wrote (p.64):
 > Later, `troff` was modified to support other typesetters and ... laser printers. The later version of `troff` is often called `ditroff` (for device-independent `troff`), but many UNIX systems have changed the name of the original `troff` to `otroff` and simply call `ditroff` by the original name, `troff`.
 
 A detailed history is provided on the "[History of UNIX Manpages](https://manpages.bsd.lv/history.html)" page. [groff's roff.7](https://man.voidlinux.org/roff.7) also provides a history.
+
+## Appendix B: OS mdoc support
+
+OSes with a check mark ('✓') can display mdoc(7) man pages "out of the box", without any special configuration required on the part of the user.
+
+```
++--------------+---+ -------------+--------------------------------------+
+| OS           |   | man system   | Notes                                |
++--------------+---+--------------+--------------------------------------+
+| Adélie       | ✓ | mandoc       |                                      |
+| Alpine       | ✓ | mandoc       |                                      |
+| Arch         | ✓ | man-db/groff | mandoc optional                      |
+| Debian       | ✓ | man-db/groff |                                      |
+| Fedora       | ✓ | man-db/groff | mandoc optional                      |
+| FreeBSD      | ✓ | mandoc       | Since 10.1                           |
+| Gentoo       | ✓ | man-db/groff | mandoc optional                      |
+| illumos      | ✓ | mandoc       |                                      |
+| macOS        | ✓ | mandoc       | Since 11 (November 2020)             |
+|              |   |              | 13 made `man` a wrapper for `mandoc` |
+| NetBSD       | ✓ | mandoc       | Since 6.0                            |
+| OpenBSD      | ✓ | mandoc       | Since 4.7                            |
+| openSUSE     | ✓ | man-db/groff | mandoc optional                      |
+| Ubuntu       | ✓ | man-db/groff |                                      |
+| Void         | ✓ | mandoc       |                                      |
++--------------+---+--------------+--------------------------------------+
+```
+Corrections and/or additions to this table welcome and encouraged.
