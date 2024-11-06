@@ -5,7 +5,7 @@ A collection of ICT guides for FOSS \*n\*x-ish systems that people might find he
 ## Guides
 
 - Documents and Documentation
-   - [Writing man pages with mdoc(7): a quickstart guide](./mdoc-quickstart.md)
+   - [mdoc(7): a language for writing man pages](./mdoc.md)
    - [Creating a minimal EPUB](./minimal-epub.md)
 - D-Bus
    - [D-Bus: The essentials](./dbus.md)
