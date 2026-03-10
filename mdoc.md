@@ -272,10 +272,10 @@ mdoc(7) man pages can be converted to other formats via the `-T` option of mando
 
 Some real-world examples of mdoc(7) sources can be found in the following repositories:
 
-* [execline-man-pages](https://github.com/flexibeast/execline-man-pages)
-* [s6-man-pages](https://github.com/flexibeast/s6-man-pages)
-* [s6-networking-man-pages](https://github.com/flexibeast/s6-networking-man-pages)
-* [s6-portable-utils-man-pages](https://github.com/flexibeast/s6-portable-utils-man-pages)
+* [execline-man-pages](https://git.sr.ht/~humm/execline-man-pages)
+* [s6-man-pages](https://git.sr.ht/~humm/s6-man-pages)
+* [s6-networking-man-pages](https://git.sr.ht/~humm/s6-networking-man-pages)
+* [s6-portable-utils-man-pages](https://git.sr.ht/~humm/s6-portable-utils-man-pages)
 
 ## Acknowledgements
 
